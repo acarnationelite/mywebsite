@@ -984,9 +984,8 @@
       activeFilterItem.each(function () {
         var filterElement = $(this).data("filter");
         var count = $(".filter-layout").find(filterElement).length;
-        $(this)
-          .children(".filter-text")
-          .append('<span class="count">' + count + "</span>");
+        // Do not append numeric counts to filter text (was interfering with service names)
+        // Previously: .append('<span class="count">' + count + "</span>");
       });
     }
   }
